@@ -10,6 +10,11 @@ A Command Line Interface (CLI) application for managing tasks. This application 
 - **Mark Task as Complete**: Update a task's status to completed.
 - **Save and Exit**: Save all tasks to a JSON file and exit the application.
 
+## Dummy Credentials
+- **Email**: test@example.com
+- **Password**: password123
+
+
 ## Getting Started
 
 ### Prerequisites
