@@ -2,6 +2,18 @@ import json
 
 tasks = {}
 task_file = "tasks.json"
+DUMMY_EMAIL = "test@example.com"
+DUMMY_PASSWORD = "password123"
+
+def login():
+    email = input("Email: ")
+    password = input("Password: ")
+    if email == DUMMY_EMAIL and password == DUMMY_PASSWORD:
+        print("Login successful!")
+        return True
+    else:
+        print("Invalid credentials. Exiting.")
+        return False
 
 def add_task(title):
     task_id = len(tasks) + 1
@@ -44,8 +56,9 @@ def load_tasks():
         tasks = {}
 
 def main():
+    if not login():
+        return
     load_tasks()
-
     while True:
         print("\nTask Manager Menu:")
         print("1. Add Task")
@@ -54,7 +67,6 @@ def main():
         print("4. Mark Task as Complete")
         print("5. Save and Exit")
         choice = input("Enter your choice (1-5): ")
-
         if choice == "1":
             title = input("Enter task title: ")
             add_task(title)
@@ -78,5 +90,6 @@ def main():
             break
         else:
             print("Invalid choice. Please select a valid option.")
+
 if __name__ == "__main__":
     main()
